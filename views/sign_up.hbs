@@ -1,0 +1,34 @@
+<section class="header-container">
+	<div class="header-bar">
+		<h2>Sign Up</h2>
+	</div>
+</section>
+
+<section>
+	{{# if success}}
+		<div class="submit-succ">
+			<h1>Sign-Up Success!</h1>
+		</div>
+	{{else}}
+		{{# if errors}}
+			<div class="submit-err">
+				<h1>Errors:</h1>
+				<ul>
+					{{# each errors}}
+						<li>-> {{ this.msg }}</li>
+					{{/each}}
+				</ul>
+			</div>
+		{{/if}}
+	{{/if}}
+</section>
+
+<form class="signup-form" action="/sign-in" method="POST">
+	<input type="text" name="first" id="first" placeholder="First Name">
+	<input type="text" name="last" id="last" placeholder="Last Name">
+	<input type="text" name="email" id="email" placeholder="E-mail">
+	<input type="text" name="uid" id="uid" placeholder="Username">
+	<input type="password" name="pwd" id="pwd" placeholder="Password">
+	<input type="password" name="cpwd" id="cpwd" placeholder="Confirm Password">
+	<button type="submit" name="submit">Create Account</button>
+</form>

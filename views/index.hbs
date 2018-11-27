@@ -1,0 +1,16 @@
+<section class="header-container">
+	<div class="header-bar">
+		<h2>Feed</h2>
+	</div>
+</section>
+
+{{# if errors}}
+	<div class="login-err">
+		<h1>Errors</h1>
+		<ul>
+			{{# each errors}}
+				<li>-> {{ this.msg }}</li>
+			{{/each}}
+		</ul>
+	</div>
+{{/if}}
